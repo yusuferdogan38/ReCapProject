@@ -27,27 +27,18 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet("getbyid")]
-        IActionResult GetById(int carId) {
+        //[HttpGet("getbyid")]
+        //IActionResult GetById(int carId) {
         
-            var result = _carService.GetByCarId(carId);
-            if (result.Success)
-            {
-                return Ok(result.Data);
-            }
-            return BadRequest(result.Message);
-        }
+        //    var result = _carService.GetByCarId(carId);
+        //    if (result.Success)
+        //    {
+        //        return Ok(result.Data);
+        //    }
+        //    return BadRequest(result.Message);
+        //}
 
-        [HttpDelete]
-        IActionResult Delete(int carId) {
-            var result = _carService.Delete(carId);
-            if (result.Success)
-            {
-                return Ok(result.Success);
-
-            }
-            return BadRequest(result.Message);
-        }
+        
 
 
 
