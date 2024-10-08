@@ -27,7 +27,13 @@ namespace Business.Concrete
             
         {
             _carDal.Add(car);
-            return new SuccessDataResult<Car>(  Messages.CarAdded );
+            return new SuccessDataResult<Car>(Messages.CarAdded);
+        }
+
+        public IResult Delete(Car car)
+        {
+            _carDal.Delete(car);
+            return new SuccessDataResult<Car>(Messages.BrandDeleted);
         }
 
         public IDataResult<List<Car>> GetAll()
@@ -45,6 +51,12 @@ namespace Business.Concrete
             
             return new SuccessDataResult<List<CarDetailsDto>>
                 (_carDal.GetCarDetails());
+        }
+
+        public IResult Update(Car car)
+        {
+            _carDal.Update(car);
+            return new SuccessDataResult<Car>();
         }
     }
 }

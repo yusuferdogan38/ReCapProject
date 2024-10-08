@@ -9,6 +9,8 @@ namespace Business.Constants
     public static class Messages
     {
         public static string CarAdded = "Araba eklendi";
+        public static string CarDeleted = "Araba silindi";
+        public static string CarUpdated = "Araba güncellendi";
         public static string CarsListed = "Seçebileceğiniz arabalar listelendi";
         public static string CarDetail = "Arabanın özellikleri : ";
         public static string CarNameInvalid = "Tanım minimum 3 karakter olmalıdır.";
