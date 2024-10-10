@@ -14,7 +14,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         {
 
-            optionsBuilder.UseSqlServer("Server=DESKTOP-2MFUM15;Database=RENTCAR;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer("Server=.;Database=RENTCAR;Trusted_Connection=true");
         }
 
         public DbSet<Car> ?Cars { get; set; }

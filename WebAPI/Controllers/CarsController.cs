@@ -1,12 +1,13 @@
 ﻿using Business.Abstract;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
-    public class CarsController : ControllerBase
+    public class CarsController : Controller
     {
         ICarService _carService;
         public CarsController(ICarService carService)
@@ -14,33 +15,18 @@ namespace WebAPI.Controllers
             _carService = carService;
         }
 
+
+
+
         [HttpGet("getall")]
-        IActionResult GetAll()
+        public IActionResult GetAll()
         {
-            var result = _carService.GetAll();
+           var result = _carService.GetAll();
             if (result.Success)
             {
                 return Ok(result.Data);
             }
             return BadRequest(result.Message);
-
-
         }
-
-        //[HttpGet("getbyid")]
-        //IActionResult GetById(int carId) {
-        
-        //    var result = _carService.GetByCarId(carId);
-        //    if (result.Success)
-        //    {
-        //        return Ok(result.Data);
-        //    }
-        //    return BadRequest(result.Message);
-        //}
-
-        
-
-
-
     }
 }
