@@ -13,7 +13,7 @@ namespace Business.Abstract
     public interface ICarService
     {
         IDataResult<List<Car>> GetAll();
-        IDataResult<List<Car>> GetByCarId(int carId);
+        IDataResult<Car> GetByCarId(int carId);
         IDataResult<List<CarDetailsDto>> GetCarDetails();
         IResult Add(Car car);
         IResult Delete(Car car);
