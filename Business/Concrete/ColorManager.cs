@@ -32,6 +32,12 @@ namespace Business.Concrete
             return new SuccessDataResult<Color>(Messages.ColorDeleted);
         }
 
+        public IResult ColorUpdate(Color color)
+        {
+            _colorDal.Update(color);
+            return new SuccessDataResult<Color>(Messages.ColorUpdated);
+        }
+
         public IDataResult<List<Color>> GetAll()
         {
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(),Messages.ColorListed
