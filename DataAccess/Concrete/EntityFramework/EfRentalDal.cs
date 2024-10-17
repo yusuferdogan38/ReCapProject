@@ -5,6 +5,7 @@ using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfRentalDal : EfEntityRepositoryBase<Rental, RentACarContext>, IRentalDal
     {
-        public List<RentalDetailDto> GetRentalDetails()
+        public List<RentalDetailDto> GetRentalDetails( )
         {
             using (RentACarContext context = new RentACarContext())
             {
@@ -29,7 +30,7 @@ namespace DataAccess.Concrete.EntityFramework
                              on u.UserId equals cu.UserId
                              select new RentalDetailDto
                              {
-                                 CarName = c.Description,
+                                 CarName = c.CarName,
                                  BrandName = b.BrandName,
                                  ColorName = cl.ColorName,
                                  DailyPrice = c.DailyPrice,
