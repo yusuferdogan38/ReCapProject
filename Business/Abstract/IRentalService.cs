@@ -17,8 +17,8 @@ namespace Business.Abstract
         IResult Delete(Rental rental);
         IDataResult<List<Rental>> GetAll();
         IDataResult<Rental> GetById(int rentalId);
-        IDataResult<Rental> GetRentalByCarID(int carId);
-        IDataResult<Rental> GetRentalByUserID(int userId);
+        IDataResult<Rental> GetRentalByCarId(int carId);
+        IDataResult<Rental> GetRentalByUserId(int userId);
 
         IDataResult<List<RentalDetailDto>> GetRentalDetails();
 

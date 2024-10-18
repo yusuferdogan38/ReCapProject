@@ -44,12 +44,12 @@ namespace Business.Concrete
             return new SuccessDataResult<Rental>(_rentalDal.Get(r=>r.RentalId==rentalId),Messages.GetRental);
         }
 
-        public IDataResult<Rental> GetRentalByCarID(int carId)
+        public IDataResult<Rental> GetRentalByCarId(int carId)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(c => c.CarId == carId), Messages.GetRental);
         }
 
-        public IDataResult<Rental> GetRentalByUserID(int userId)
+        public IDataResult<Rental> GetRentalByUserId(int userId)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(u => u.UserId == userId), Messages.GetUser);
         }
