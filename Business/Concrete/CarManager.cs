@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.DependencyResolvers.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Result;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -11,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Business.Concrete
 {
@@ -26,6 +29,7 @@ namespace Business.Concrete
         public IResult Add(Car car)
             
         {
+            ValidationTool.Validate(new CarValidator(), car);
             _carDal.Add(car);
             return new SuccessDataResult<Car>(Messages.CarAdded);
         }
