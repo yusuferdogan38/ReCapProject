@@ -48,6 +48,19 @@ namespace Business.Constants
         public static string GetUser = "Seçtiğiniz Kullanıcı : ";
 
 
-        public static string ImageLimitExceded = "en fazla 5 resim yükleyebilirsin";
+        public static string FileUploadError = "Dosya Yükleme hatası";
+        public static string ImageAdded = "resim eklendi";
+        public static string ImageDeleted = "resim silindi";
+        public static string CarImageLimitError = "resim limiti aşıldı";
+        public static string InvalidFile = "resim limiti aşıldı";
+        public static string ImageUpdated = "resim güncellendi";
+        public static string ImageListed = "resimler listelendi";
+    
+
+
+
+
+
+
     }
 }
