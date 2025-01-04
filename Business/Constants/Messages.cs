@@ -46,7 +46,11 @@ namespace Business.Constants
         public static string UserUpdated = "Kullanıcı Güncellendi";
         public static string UsersListed = "Kullanıcılar Listelendi";
         public static string GetUser = "Seçtiğiniz Kullanıcı : ";
-
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+        public static string UserAlreadyExists = "kullanıcı zaten var";
+        public static string PasswordError = "şifre hatalı";
+        public static string UserRegistered = "kullanıcı oluşturuldu";
+        public static string SuccessfulLogin = "başarılı";
 
         public static string FileUploadError = "Dosya Yükleme hatası";
         public static string ImageAdded = "resim eklendi";
@@ -55,7 +59,8 @@ namespace Business.Constants
         public static string InvalidFile = "resim limiti aşıldı";
         public static string ImageUpdated = "resim güncellendi";
         public static string ImageListed = "resimler listelendi";
-    
+        public static string AccessTokenCreated = "Token oluşturuldu";
+        public static string AuthorizationDenied= "Yetkiniz yok.";
 
 
 
