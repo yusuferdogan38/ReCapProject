@@ -15,15 +15,16 @@ namespace Business.Concrete
 {
     public  class UserManager :IUserService
     {
-        IUserDal _userDal;
+       private readonly IUserDal _userDal;
 
         public UserManager(IUserDal userDal)
         {
-            userDal = _userDal;
+            _userDal=userDal;
         }
 
         public IResult Add(User user)
         {
+            
             _userDal.Add(user);
             return new SuccessResult(Messages.UserAdded);
         }

@@ -3,13 +3,8 @@ using Core.Extensions;
 using Core.Security.Encryption;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Security.JWT
 {
@@ -43,12 +38,16 @@ namespace Core.Security.JWT
 
         public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user,
             SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
+
         {
+           
+
+
             var jwt = new JwtSecurityToken(
                 issuer: tokenOptions.Issuer,
                 audience: tokenOptions.Audience,
                 expires: _accessTokenExpiration,
-                notBefore: DateTime.Now,
+                notBefore: DateTime.UtcNow,
                 claims: SetClaims(user, operationClaims),
                 signingCredentials: signingCredentials
             );
