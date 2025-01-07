@@ -3,12 +3,21 @@ using Autofac.Extensions.DependencyInjection;
 using Business.Abstract;
 using Business.Concrete;
 using Business.DependencyResolvers.Autofac;
+using Core.DependencyResolvers;
 using Core.Security.Encryption;
 using Core.Security.JWT;
+using Core.Utilities.Ioc;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Autofac.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +42,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
         };
     });
+
+ builder.Services.AddDependencyResolvers(new ICoreModule[] {
+    new CoreModule(),
+    
+     });
+
+
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
